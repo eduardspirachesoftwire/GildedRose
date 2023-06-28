@@ -102,7 +102,7 @@ describe('Gilded Rose', function () {
     it('Random Item: should decrease quality up until 0', function() {
         const gildedRose = new GildedRose([ new Item('stew', 0, 1) ]);
         let items: Item[];
-        items = gildedRose.updateQuality();
+        gildedRose.updateQuality();
         items = gildedRose.updateQuality();
 
         expect(items[0].quality).to.equal(0);
@@ -111,7 +111,7 @@ describe('Gilded Rose', function () {
     it('Random Item: should decrease sellin', function() {
         const gildedRose = new GildedRose([ new Item('stew', -49, 1) ]);
         let items: Item[];
-        items = gildedRose.updateQuality();
+        gildedRose.updateQuality();
         items = gildedRose.updateQuality();
 
         expect(items[0].sellIn).to.equal(-51);

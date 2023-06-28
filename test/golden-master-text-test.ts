@@ -1,5 +1,4 @@
 import {Item, GildedRose} from '../app/gilded-rose';
-import * as fs from "fs";
 import {expect} from "chai";
 
 describe('Golden Master', function () {
@@ -13,10 +12,12 @@ describe('Golden Master', function () {
             new Item('Backstage passes to a TAFKAL80ETC concert', 15, 7),
             new Item('Stew', 1, 3),
             new Item('Honey', 0, 8),
-            new Item('Car', 15, 9)];
+            new Item('Car', 15, 9),
+            new Item('Conjured Broom', 15, 9),
+            new Item('Conjured Broom', 0, 9)];
         const gildedRose = new GildedRose(itemList);
         let items: Item[];
-        items = gildedRose.updateQuality();
+        gildedRose.updateQuality();
         items = gildedRose.updateQuality();
 
         expect(items[0].quality).to.equal(38);
@@ -28,6 +29,8 @@ describe('Golden Master', function () {
         expect(items[6].quality).to.equal(0);
         expect(items[7].quality).to.equal(4);
         expect(items[8].quality).to.equal(7);
+        expect(items[9].quality).to.equal(5);
+        expect(items[10].quality).to.equal(1);
     });
 
 });

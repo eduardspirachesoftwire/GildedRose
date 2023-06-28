@@ -35,6 +35,11 @@ export class GildedRose {
                     item.quality++;
                 }
                 item.quality++;
+            } else if (item.name.includes("Conjured")) {
+                if (item.sellIn < 0) {
+                    item.quality -= 2;
+                }
+                item.quality -= 2;
             } else if (item.name === "Backstage passes to a TAFKAL80ETC concert") {
                 if (item.sellIn < 0) {
                     item.quality = 0;
